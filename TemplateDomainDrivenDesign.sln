@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31919.166
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos", "Todos\Todos.csproj", "{10821D05-3A70-4958-9CDE-98283050669E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateDomainDrivenDesign", "Todos\TemplateDomainDrivenDesign.csproj", "{10821D05-3A70-4958-9CDE-98283050669E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FCC1C541-575E-437A-AAE6-C67F236AF3B1}"
 EndProject
@@ -11,21 +11,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{F48DEA80-4B5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{16D9DE67-9E5A-4273-BA69-95E44884682F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Application", "Todos.Application\Todos.Application.csproj", "{A32480E0-7B98-4BD4-B32F-786885175730}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateDomainDrivenDesign.Application", "Todos.Application\TemplateDomainDrivenDesign.Application.csproj", "{A32480E0-7B98-4BD4-B32F-786885175730}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Domain", "Todos.Domain\Todos.Domain.csproj", "{9063519C-1DBB-4AD1-A39C-88FDC9E495B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateDomainDrivenDesign.Domain", "Todos.Domain\TemplateDomainDrivenDesign.Domain.csproj", "{9063519C-1DBB-4AD1-A39C-88FDC9E495B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{89282534-002B-46F2-9F8E-F479C6267023}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Identity", "Todos.Identity\Todos.Identity.csproj", "{A79044E2-9D84-4692-9C57-5C2E27B6E2F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateDomainDrivenDesign.Identity", "Todos.Identity\TemplateDomainDrivenDesign.Identity.csproj", "{A79044E2-9D84-4692-9C57-5C2E27B6E2F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.Persistence", "Todos.Persistence\Todos.Persistence.csproj", "{91787E52-3A53-4B86-A83C-EF5944897407}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateDomainDrivenDesign.Persistence", "Todos.Persistence\TemplateDomainDrivenDesign.Persistence.csproj", "{91787E52-3A53-4B86-A83C-EF5944897407}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4F06EE66-6432-4275-B1E3-7877DE367889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.IntegrationTests", "Todos.IntegrationTests\Todos.IntegrationTests.csproj", "{0AF4BC61-41C2-4DA7-97ED-62BD5A845734}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateDomainDrivenDesign.IntegrationTests", "Todos.IntegrationTests\TemplateDomainDrivenDesign.IntegrationTests.csproj", "{0AF4BC61-41C2-4DA7-97ED-62BD5A845734}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos.UnitTests", "Todos.UnitTests\Todos.UnitTests.csproj", "{2152CE34-44CA-4DB7-94A0-423E73B8A2D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateDomainDrivenDesign.UnitTests", "Todos.UnitTests\TemplateDomainDrivenDesign.UnitTests.csproj", "{2152CE34-44CA-4DB7-94A0-423E73B8A2D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,6 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,8 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Todos.Application\Todos.Application.csproj" />
-    <ProjectReference Include="..\Todos.Identity\Todos.Identity.csproj" />
+    <ProjectReference Include="..\Todos.Application\TemplateDomainDrivenDesign.Application.csproj" />
+    <ProjectReference Include="..\Todos.Identity\TemplateDomainDrivenDesign.Identity.csproj" />
   </ItemGroup>
 
 </Project>
