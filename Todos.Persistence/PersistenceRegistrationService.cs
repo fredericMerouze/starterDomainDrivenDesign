@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +12,10 @@ namespace Todos.Persistence
 {
     public static class PersistenceRegistrationService
     {
-        public static void AddPersistenceService(this IServiceCollection services)
+        public static void AddPersistenceService(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
         }
     }
 }
