@@ -1,13 +1,9 @@
 ﻿using MediatR;
 using TemplateDomainDrivenDesign.Application.Contracts;
+using TemplateDomainDrivenDesign.Application.Features.Task.Query.GetAllTaskForUser;
 
 namespace TemplateDomainDrivenDesign.Application.Features.Task.Query
 {
-    public class GetAllTaskForUserQuery : IRequest<List<Domain.Entities.Task>>
-    {
-
-    }
-
     public class GetAllTaskForUserQueryHandler : IRequestHandler<GetAllTaskForUserQuery, List<Domain.Entities.Task>>
     {
         private readonly ITaskService _taskService;

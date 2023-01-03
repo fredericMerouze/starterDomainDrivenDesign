@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TemplateDomainDrivenDesign.Application.Features.Task.Query
 {
-    public class GetAllTaskForUserQueryValidator : AbstractValidator<GetAllTaskForUserQuery>
+    public class GetAllTaskForUserQueryValidator : AbstractValidator<GetAllTaskForUserQueryHandler>
     {
         public GetAllTaskForUserQueryValidator()
         {

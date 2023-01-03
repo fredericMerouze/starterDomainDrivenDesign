@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using TemplateDomainDrivenDesign.Application.Features.Task.Query;
+using TemplateDomainDrivenDesign.Application.Features.Task.Query.GetAllTaskForUser;
 
 namespace TemplateDomainDrivenDesign.Controllers
 {
@@ -18,9 +18,7 @@ namespace TemplateDomainDrivenDesign.Controllers
         [HttpGet]
         public async Task<ActionResult> GetAllTaskForUser()
         {
-            var query = new GetAllTaskForUserQuery();
-
-            var result = await _mediator.Send(query);
+            var result = await _mediator.Send(new GetAllTaskForUserQuery());
 
             return Ok(result);
         }
