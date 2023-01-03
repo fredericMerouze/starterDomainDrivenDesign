@@ -1,10 +1,4 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TemplateDomainDrivenDesign.Application.Common.Exception;
 using TemplateDomainDrivenDesign.Application.Contracts;
 
 namespace TemplateDomainDrivenDesign.Application.Features.Task.Query
@@ -25,12 +19,6 @@ namespace TemplateDomainDrivenDesign.Application.Features.Task.Query
 
         public async Task<List<Domain.Entities.Task>> Handle(GetAllTaskForUserQuery request, CancellationToken cancellationToken)
         {
-            var validator = new GetAllTaskForUserQueryValidator();
-            var validationResult = await validator.ValidateAsync(request);
-
-            if (validationResult.Errors.Count > 0)
-                throw new ValidationException(validationResult);
-
             var tasks = _taskService.GetAllTaskForUser();
 
             return tasks;
