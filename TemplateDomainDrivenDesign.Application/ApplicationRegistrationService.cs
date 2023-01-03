@@ -21,7 +21,7 @@ namespace TemplateDomainDrivenDesign.Application
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddScoped<ITaskService, TaskService>();
+            services.AddScoped<ITaskRepository, TaskService>();
         }
     }
 }

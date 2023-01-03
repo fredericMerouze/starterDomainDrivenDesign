@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TemplateDomainDrivenDesign.Application.Contracts;
 
-namespace TemplateDomainDrivenDesign.Application.Services
+namespace TemplateDomainDrivenDesign.Persistence.Repositories
 {
-    public class TaskService : ITaskRepository
+    public class TaskRepository : ITaskRepository
     {
-        private readonly IApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public TaskService(IApplicationDbContext context)
+        public TaskRepository(ApplicationDbContext context)
         {
             _context = context;
         }

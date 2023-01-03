@@ -6,9 +6,9 @@ namespace TemplateDomainDrivenDesign.Application.Features.Task.Query
 {
     public class GetAllTaskForUserQueryHandler : IRequestHandler<GetAllTaskForUserQuery, List<Domain.Entities.Task>>
     {
-        private readonly ITaskService _taskService;
+        private readonly ITaskRepository _taskService;
 
-        public GetAllTaskForUserQueryHandler(ITaskService taskService)
+        public GetAllTaskForUserQueryHandler(ITaskRepository taskService)
         {
             _taskService = taskService;
         }
