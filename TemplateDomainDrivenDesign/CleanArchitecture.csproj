@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TemplateDomainDrivenDesign.Application\TemplateDomainDrivenDesign.Application.csproj" />
-    <ProjectReference Include="..\TemplateDomainDrivenDesign.Persistence\TemplateDomainDrivenDesign.Persistence.csproj" />
+    <ProjectReference Include="..\TemplateDomainDrivenDesign.Application\CleanArchitecture.Application.csproj" />
+    <ProjectReference Include="..\TemplateDomainDrivenDesign.Persistence\CleanArchitecture.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
