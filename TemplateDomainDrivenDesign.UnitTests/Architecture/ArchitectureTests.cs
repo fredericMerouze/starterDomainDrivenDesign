@@ -10,38 +10,25 @@ namespace CleanArchitecture.UnitTests.Architecture
         private const string DomainNamespace = "CleanArchitecture.Domain";
         private const string ApplicationNamespace = "CleanArchitecture.Application";
         private const string PersistenceNamespace = "CleanArchitecture.Persistence";
-        private const string PresentationNamespace = "CleanArchitecture";
-
-        private IEnumerable<string> AssemblyNames = Enumerable.Empty<string>();
+        private const string PresentationNamespace = "CleanArchitecture.Presentation";
 
         public ArchitectureTests()
         {
-            AssemblyNames = LoadAssemblies();
         }
 
-        private IEnumerable<string> LoadAssemblies()
-        {
-            var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(x => x.FullName != null && x.FullName.Contains("CleanArchitecture"));
-
-            if(assemblies.Any())
-            {
-                foreach(var assembly in assemblies)
-                {
-                    var assemblyName = assembly.GetName().Name;
-                    if(assemblyName is not null)
-                        yield return assemblyName;
-                }
-            }
-        }
-    
         [Fact]
         public void Domain_Should_Not_HaveDependency_On_Other_Project()
         {
             // Arrange
-            var domainAssembly =  AssemblyNames.Where(x => x.Equals(DomainNamespace)).First();
-            string[] otherProjects = AssemblyNames.Where(x => !x.Equals(DomainNamespace)).ToArray();
+            var assembly = Assembly.Load(DomainNamespace);
+            string[] otherProjects = new string[]
+            {
+                PersistenceNamespace,
+                PresentationNamespace,
+                ApplicationNamespace
+            };
             // Act
-            var results = Types.InAssembly(Assembly.Load(domainAssembly))
+            var results = Types.InAssembly(assembly)
                 .ShouldNot()
                 .HaveDependencyOnAll(otherProjects)
                 .GetResult();
@@ -54,19 +41,17 @@ namespace CleanArchitecture.UnitTests.Architecture
         public void Application_Should_Not_HaveDependency_On_Other_Project()
         {
             // Arrange
-            string applicationAssembly = AssemblyNames.Where(x => x.Equals(ApplicationNamespace)).First();
+            var assembly = Assembly.Load(ApplicationNamespace);
             string[] otherProjects = new string[] {
-                ApplicationNamespace,
                 DomainNamespace,
-                PersistenceNamespace
+                PersistenceNamespace,
+                PresentationNamespace
             };
 
-            var types = Types.InCurrentDomain();
-
             // Act
-            var results = types.That().ResideInNamespace(applicationAssembly)
-                .Should()
-                .HaveDependencyOn(PresentationNamespace)
+            var results = Types.InAssembly(assembly)
+                .ShouldNot()
+                .HaveDependencyOnAll(otherProjects)
                 .GetResult();
 
             // Assert
@@ -75,5 +60,23 @@ namespace CleanArchitecture.UnitTests.Architecture
 
 
 
+        [Fact]
+        public void Infrastructure_Should_Not_HaveDependency_On_Other_Project()
+        {
+            // Arrange
+            var assembly = Assembly.Load(PersistenceNamespace);
+            var otherProjects = new[] {
+                PresentationNamespace
+            };
+
+            // Act
+            var results = Types.InAssembly(assembly)
+                .ShouldNot()
+                .HaveDependencyOnAll(otherProjects)
+                .GetResult();
+
+            // Assert
+            results.IsSuccessful.Should().BeTrue();
+        }
     }
 }

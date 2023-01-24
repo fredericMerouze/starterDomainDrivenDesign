@@ -1,15 +1,10 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using CleanArchitecture.Application.Behaviors;
-using CleanArchitecture.Application.Contracts;
 using CleanArchitecture.Application.Services;
+using CleanArchitecture.Application.Contracts.Services;
 
 namespace CleanArchitecture.Application
 {
@@ -21,7 +16,7 @@ namespace CleanArchitecture.Application
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddScoped<ITaskRepository, TaskService>();
+            services.AddScoped<ITaskService, TaskService>();
         }
     }
 }

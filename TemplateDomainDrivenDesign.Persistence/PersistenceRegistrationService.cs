@@ -1,12 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CleanArchitecture.Application.Contracts;
+using CleanArchitecture.Persistence.Repositories;
 
 namespace CleanArchitecture.Persistence
 {
@@ -16,6 +12,7 @@ namespace CleanArchitecture.Persistence
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
+            services.AddScoped<ITaskRepository, TaskRepository>();
         }
     }
 }

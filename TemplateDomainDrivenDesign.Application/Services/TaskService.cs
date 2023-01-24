@@ -4,21 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CleanArchitecture.Application.Contracts;
+using CleanArchitecture.Application.Contracts.Services;
 
 namespace CleanArchitecture.Application.Services
 {
-    public class TaskService : ITaskRepository
+    public class TaskService : ITaskService
     {
-        private readonly IApplicationDbContext _context;
+        private readonly ITaskRepository _repository;
 
-        public TaskService(IApplicationDbContext context)
+        public TaskService(ITaskRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         public List<Domain.Entities.Task> GetAllTaskForUser()
         {
-            return _context.Tasks.ToList();
+            return _repository.GetAllTaskForUser();
         }
     }
 }

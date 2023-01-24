@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CleanArchitecture.Application.Contracts;
+﻿using CleanArchitecture.Application.Contracts;
 
 namespace CleanArchitecture.Persistence.Repositories
 {
@@ -18,7 +13,7 @@ namespace CleanArchitecture.Persistence.Repositories
 
         public List<Domain.Entities.Task> GetAllTaskForUser()
         {
-            return _context.Tasks.ToList();
+            return _context.Set<Domain.Entities.Task>().ToList();
         }
     }
 }

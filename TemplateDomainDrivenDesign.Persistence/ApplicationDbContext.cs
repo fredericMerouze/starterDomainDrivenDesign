@@ -3,10 +3,8 @@ using CleanArchitecture.Application.Contracts;
 
 namespace CleanArchitecture.Persistence
 {
-    public class ApplicationDbContext : DbContext, IApplicationDbContext
+    public sealed class ApplicationDbContext : DbContext, IApplicationDbContext
     {
-        public DbSet<Domain.Entities.Task> Tasks { get; set; }
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
