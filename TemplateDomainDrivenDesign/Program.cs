@@ -1,6 +1,6 @@
-using TemplateDomainDrivenDesign.Application;
-using TemplateDomainDrivenDesign.Filters;
-using TemplateDomainDrivenDesign.Persistence;
+using CleanArchitecture.Application;
+using CleanArchitecture.Filters;
+using CleanArchitecture.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 

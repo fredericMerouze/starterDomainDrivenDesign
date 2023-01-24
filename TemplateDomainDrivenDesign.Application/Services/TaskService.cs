@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TemplateDomainDrivenDesign.Application.Contracts;
+using CleanArchitecture.Application.Contracts;
 
-namespace TemplateDomainDrivenDesign.Application.Services
+namespace CleanArchitecture.Application.Services
 {
     public class TaskService : ITaskRepository
     {

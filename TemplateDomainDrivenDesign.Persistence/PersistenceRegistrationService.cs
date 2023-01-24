@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TemplateDomainDrivenDesign.Application.Contracts;
+using CleanArchitecture.Application.Contracts;
 
-namespace TemplateDomainDrivenDesign.Persistence
+namespace CleanArchitecture.Persistence
 {
     public static class PersistenceRegistrationService
     {

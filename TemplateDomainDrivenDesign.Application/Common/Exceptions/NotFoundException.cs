@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemplateDomainDrivenDesign.Application.Exceptions.Base
+namespace CleanArchitecture.Application.Exceptions.Base
 {
     public class NotFoundException : Exception
     {

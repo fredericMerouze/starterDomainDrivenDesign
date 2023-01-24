@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TemplateDomainDrivenDesign.Application\CleanArchitecture.Application.csproj" />
-    <ProjectReference Include="..\TemplateDomainDrivenDesign.Identity\CleanArchitecture.Identity.csproj" />
   </ItemGroup>
 
 </Project>

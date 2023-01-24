@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TemplateDomainDrivenDesign.Persistence;
+using CleanArchitecture.Persistence;
 
 #nullable disable
 
-namespace TemplateDomainDrivenDesign.Persistence.Migrations
+namespace CleanArchitecture.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -155,7 +155,7 @@ namespace TemplateDomainDrivenDesign.Persistence.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("TemplateDomainDrivenDesign.Domain.Entities.Task", b =>
+            modelBuilder.Entity("CleanArchitecture.Domain.Entities.Task", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -172,7 +172,7 @@ namespace TemplateDomainDrivenDesign.Persistence.Migrations
                     b.ToTable("Tasks");
                 });
 
-            modelBuilder.Entity("TemplateDomainDrivenDesign.Identity.Entities.ApplicationUser", b =>
+            modelBuilder.Entity("CleanArchitecture.Identity.Entities.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -248,7 +248,7 @@ namespace TemplateDomainDrivenDesign.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("TemplateDomainDrivenDesign.Identity.Entities.ApplicationUser", null)
+                    b.HasOne("CleanArchitecture.Identity.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -257,7 +257,7 @@ namespace TemplateDomainDrivenDesign.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("TemplateDomainDrivenDesign.Identity.Entities.ApplicationUser", null)
+                    b.HasOne("CleanArchitecture.Identity.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -272,7 +272,7 @@ namespace TemplateDomainDrivenDesign.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TemplateDomainDrivenDesign.Identity.Entities.ApplicationUser", null)
+                    b.HasOne("CleanArchitecture.Identity.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -281,7 +281,7 @@ namespace TemplateDomainDrivenDesign.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("TemplateDomainDrivenDesign.Identity.Entities.ApplicationUser", null)
+                    b.HasOne("CleanArchitecture.Identity.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

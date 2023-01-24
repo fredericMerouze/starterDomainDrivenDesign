@@ -1,4 +1,4 @@
-﻿namespace TemplateDomainDrivenDesign.Application.Contracts
+﻿namespace CleanArchitecture.Application.Contracts
 {
     public interface ITaskRepository
     {

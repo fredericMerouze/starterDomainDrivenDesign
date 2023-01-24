@@ -1,17 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TemplateDomainDrivenDesign.Application.Contracts;
-using TemplateDomainDrivenDesign.Identity.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using CleanArchitecture.Application.Contracts;
 
-namespace TemplateDomainDrivenDesign.Persistence
+namespace CleanArchitecture.Persistence
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityRole, string>, IApplicationDbContext
+    public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         public DbSet<Domain.Entities.Task> Tasks { get; set; }
 

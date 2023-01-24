@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using TemplateDomainDrivenDesign.Application.Features.Task.Query.GetAllTaskForUser;
+using CleanArchitecture.Application.Features.Task.Query.GetAllTaskForUser;
 
-namespace TemplateDomainDrivenDesign.Controllers
+namespace CleanArchitecture.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemplateDomainDrivenDesign.Application.Common.Exceptions
+namespace CleanArchitecture.Application.Common.Exceptions
 {
     public class ValidationException : ApplicationException
     {

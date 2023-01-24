@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TemplateDomainDrivenDesign.Domain.Primitives;
+﻿using CleanArchitecture.Domain.Primitives;
 
-namespace TemplateDomainDrivenDesign.Domain.Entities
+namespace CleanArchitecture.Domain.Entities
 {
     public sealed class Task : Entity
     {

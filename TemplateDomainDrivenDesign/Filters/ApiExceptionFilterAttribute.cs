@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using TemplateDomainDrivenDesign.Application.Common.Exceptions;
-using TemplateDomainDrivenDesign.Application.Exceptions.Base;
+using CleanArchitecture.Application.Common.Exceptions;
+using CleanArchitecture.Application.Exceptions.Base;
 
-namespace TemplateDomainDrivenDesign.Filters
+namespace CleanArchitecture.Filters
 {
     public sealed class ApiExceptionFilterAttribute : ExceptionFilterAttribute
     {

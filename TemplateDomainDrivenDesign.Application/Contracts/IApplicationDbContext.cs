@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemplateDomainDrivenDesign.Application.Contracts
+namespace CleanArchitecture.Application.Contracts
 {
     public interface IApplicationDbContext
     {

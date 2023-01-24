@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemplateDomainDrivenDesign.Identity.Entities
+namespace CleanArchitecture.Identity.Entities
 {
     public class ApplicationUser : IdentityUser
     {

@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "TemplateDomainDrivenDesign": {
+    "CleanArchitecture": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

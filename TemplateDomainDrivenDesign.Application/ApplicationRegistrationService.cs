@@ -7,11 +7,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using TemplateDomainDrivenDesign.Application.Behaviors;
-using TemplateDomainDrivenDesign.Application.Contracts;
-using TemplateDomainDrivenDesign.Application.Services;
+using CleanArchitecture.Application.Behaviors;
+using CleanArchitecture.Application.Contracts;
+using CleanArchitecture.Application.Services;
 
-namespace TemplateDomainDrivenDesign.Application
+namespace CleanArchitecture.Application
 {
     public static class ApplicationRegistrationService
     {

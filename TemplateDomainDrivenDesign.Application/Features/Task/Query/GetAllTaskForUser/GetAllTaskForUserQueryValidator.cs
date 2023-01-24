@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemplateDomainDrivenDesign.Application.Features.Task.Query
+namespace CleanArchitecture.Application.Features.Task.Query
 {
     public class GetAllTaskForUserQueryValidator : AbstractValidator<GetAllTaskForUserQueryHandler>
     {
