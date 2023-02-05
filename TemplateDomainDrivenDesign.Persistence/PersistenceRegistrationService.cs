@@ -8,11 +8,13 @@ namespace CleanArchitecture.Persistence
 {
     public static class PersistenceRegistrationService
     {
-        public static void AddPersistenceService(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddPersistenceService(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
             services.AddScoped<ITaskRepository, TaskRepository>();
+
+            return services;
         }
     }
 }
