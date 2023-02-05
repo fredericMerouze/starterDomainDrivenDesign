@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using CleanArchitecture.Application.Common.Exceptions;
 using CleanArchitecture.Application.Exceptions.Base;
+using Microsoft.AspNetCore.Http;
 
-namespace CleanArchitecture.Filters
+namespace CleanArchitecture.Presentation.Filters
 {
     public sealed class ApiExceptionFilterAttribute : ExceptionFilterAttribute
     {
