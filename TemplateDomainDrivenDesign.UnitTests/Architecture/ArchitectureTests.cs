@@ -11,6 +11,7 @@ namespace CleanArchitecture.UnitTests.Architecture
         private const string ApplicationNamespace = "CleanArchitecture.Application";
         private const string PersistenceNamespace = "CleanArchitecture.Persistence";
         private const string PresentationNamespace = "CleanArchitecture.Presentation";
+        private const string ApiNamepaspace = "CleanArchitecture.Api";
 
         public ArchitectureTests()
         {
@@ -25,14 +26,15 @@ namespace CleanArchitecture.UnitTests.Architecture
             {
                 PersistenceNamespace,
                 PresentationNamespace,
-                ApplicationNamespace
+                ApplicationNamespace,
+                ApiNamepaspace
             };
             // Act
             var results = Types.InAssembly(assembly)
                 .ShouldNot()
                 .HaveDependencyOnAll(otherProjects)
                 .GetResult();
-      
+
             // Assert
             results.IsSuccessful.Should().BeTrue();
         }
@@ -43,9 +45,11 @@ namespace CleanArchitecture.UnitTests.Architecture
             // Arrange
             var assembly = Assembly.Load(ApplicationNamespace);
             string[] otherProjects = new string[] {
-                DomainNamespace,
+                ApiNamepaspace,
                 PersistenceNamespace,
-                PresentationNamespace
+                PresentationNamespace,
+                DomainNamespace,
+                ApplicationNamespace
             };
 
             // Act
@@ -61,12 +65,57 @@ namespace CleanArchitecture.UnitTests.Architecture
 
 
         [Fact]
-        public void Infrastructure_Should_Not_HaveDependency_On_Other_Project()
+        public void Persitence_Should_Not_HaveDependency_On_Other_Project()
         {
             // Arrange
             var assembly = Assembly.Load(PersistenceNamespace);
             var otherProjects = new[] {
-                PresentationNamespace
+                PresentationNamespace,
+                ApiNamepaspace,
+                PresentationNamespace,
+                DomainNamespace,
+            };
+
+            // Act
+            var results = Types.InAssembly(assembly)
+                .ShouldNot()
+                .HaveDependencyOnAll(otherProjects)
+                .GetResult();
+
+            // Assert
+            results.IsSuccessful.Should().BeTrue();
+        }
+
+        [Fact]
+        public void Presentation_Should_Not_HaveDependency_On_Other_Project()
+        {
+            // Arrange
+            var assembly = Assembly.Load(PresentationNamespace);
+            var otherProjects = new[] {
+                ApiNamepaspace,
+                PersistenceNamespace,
+                DomainNamespace,
+            };
+
+            // Act
+            var results = Types.InAssembly(assembly)
+                .ShouldNot()
+                .HaveDependencyOnAll(otherProjects)
+                .GetResult();
+
+            // Assert
+            results.IsSuccessful.Should().BeTrue();
+        }
+
+        [Fact]
+        public void Api_Should_Not_HaveDependency_On_Other_Project()
+        {
+            // Arrange
+            var assembly = Assembly.Load(PresentationNamespace);
+            var otherProjects = new[] {
+                PersistenceNamespace,
+                DomainNamespace,
+                ApplicationNamespace
             };
 
             // Act

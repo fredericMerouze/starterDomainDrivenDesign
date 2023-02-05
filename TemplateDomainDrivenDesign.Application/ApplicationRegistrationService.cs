@@ -12,11 +12,12 @@ namespace CleanArchitecture.Application
     {
         public static void AddApplicationService(this IServiceCollection services)
         {
+            var t = Assembly.GetExecutingAssembly();
             services.AddMediatR(Assembly.GetExecutingAssembly());
-            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddScoped<ITaskService, TaskService>();
+            //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            //services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+            //services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            //services.AddScoped<ITaskService, TaskService>();
         }
     }
 }
