@@ -22,7 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TemplateDomainDrivenDesign.Application\CleanArchitecture.Application.csproj" />
     <ProjectReference Include="..\TemplateDomainDrivenDesign.Domain\CleanArchitecture.Domain.csproj" />
-    <ProjectReference Include="..\TemplateDomainDrivenDesign\CleanArchitecture.Presentation.csproj" />
+    <ProjectReference Include="..\TemplateDomainDrivenDesign\CleanArchitecture.Api.csproj" />
   </ItemGroup>
 
 </Project>

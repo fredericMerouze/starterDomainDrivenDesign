@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using CleanArchitecture.Application.Features.Task.Query.GetAllTaskForUser;
 
-namespace CleanArchitecture.Controllers
+namespace CleanArchitecture.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
