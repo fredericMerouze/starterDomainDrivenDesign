@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CleanArchitecture.Application.Contracts;
-using CleanArchitecture.Application.Contracts.Services;
+﻿using CleanArchitecture.Application.Contracts.Services;
+using CleanArchitecture.Domain.Contracts.Repositories;
 
 namespace CleanArchitecture.Application.Services
 {

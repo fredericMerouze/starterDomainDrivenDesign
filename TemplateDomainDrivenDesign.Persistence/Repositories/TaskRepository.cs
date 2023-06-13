@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.Contracts;
+﻿using CleanArchitecture.Domain.Contracts.Repositories;
 
 namespace CleanArchitecture.Persistence.Repositories
 {
